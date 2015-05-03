@@ -90,7 +90,7 @@ setInterval(function() {
       for (var j = 0; j < d.payload.headers.length; j++) {
         var header = d.payload.headers[j];
         // Email is @gmail.com for now, for testing purposes.
-        if (header.name == "From" && header.value.indexOf("@gmail.com") == -1) {
+        if (header.name == "From" && header.value.indexOf("@apple.com") == -1) {
           shouldSendYo = false
         }
         if (header.name == "Subject" && header.value.indexOf("WWDC") == -1) {
