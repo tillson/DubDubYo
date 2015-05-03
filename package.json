@@ -1,0 +1,21 @@
+{
+  "name": "DubDubYo",
+  "version": "1.0.0",
+  "description": "Get a Yo alert as soon as you get your WWDC result email comes in.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tillson Galloway",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3",
+    "express-session": "^1.11.1",
+    "nconf": "^0.7.1",
+    "node-gmail-api": "^0.3.1",
+    "passport": "^0.2.1",
+    "passport-google-oauth": "^0.2.0",
+    "session": "^0.1.0",
+    "yo-api": "^1.1.2"
+  }
+}
