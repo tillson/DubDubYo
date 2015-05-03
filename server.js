@@ -70,7 +70,7 @@ setInterval(function() {
       var shouldSendYo = true
       for (var j = 0; j < d.payload.headers.length; j++) {
         var header = d.payload.headers[j];
-        // Check if it is from apple
+        // Email is @gmail.com for now, for testing purposes.
         if (header.name == "From" && header.value.indexOf("@gmail.com") == -1) {
           shouldSendYo = false
           console.log(header.value);
@@ -85,8 +85,6 @@ setInterval(function() {
         yo.yo("TILLSON", function (err, res, body) {
           console.log("HEY, WE JUST YO'D " + "TILLSON")
         })
-      } else {
-        console.log("No, yo.");
       }
     })
   }
