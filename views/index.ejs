@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title> WWDC Yo Alert </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container" style="padding-top: 40px;">
+		<div class="row">
+			<div class="col-md-5 col-md-offset-3">
+				<h1>WWDC Yo Notifier</h1>
+        <% if (signed == false) { %>
+				<form action="/submit" method="POST">
+					<input type="text" name="username" class="form-control" placeholder="Yo Username"> <br>
+					<button class="btn btn-success" type="submit">Authenticate with Google</button>
+				</form>
+				<br>
+			</div>
+		</div>
+		<p style="text-align: center"><b>Information:</b> You'll get a Yo alert right after you sign up, and once your Gmail account recieves the WWDC Scholarship email.</p>
+  	<% } else { %>
+      <div class="alert alert-success" role="alert" style="margin:auto; width:50%"><b>Yo!</b> You're all signed up!</div><br><br>
+    <% } %>
+		<footer style="text-align: center;">
+			<hr>
+			<p>2015 Tillson Galloway  |  <a href="https://github.com/tillson/dubdubyo">Source</a></span>
+		</footer>
+	</div>
+</body>
+</html>

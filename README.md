@@ -3,6 +3,7 @@ Get a Yo as soon as your WWDC Scholarship email arrives.
 
 ## So, how do I use it?
 I'm glad you asked!
+
 First off, you have to generate some API keys for various places, and create a config.json file.  That file should look like this:
 
     {
@@ -26,4 +27,4 @@ From here, you should be good to go.
 
 ### Other API keys
 - Session secret key: You create this on your own
-- Yo key: Created at [dev.justyo.co](dev.justyo.co)
+- Yo key: Created at [dev.justyo.co](http://dev.justyo.co)

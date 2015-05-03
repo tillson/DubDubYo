@@ -9,6 +9,8 @@
   "author": "Tillson Galloway",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.12.3",
+    "ejs": "^2.3.1",
     "express": "^4.12.3",
     "express-session": "^1.11.1",
     "nconf": "^0.7.1",
