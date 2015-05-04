@@ -1,19 +1,19 @@
-var express = require("express");
-var Yo = require("yo-api");
-var nconf = require("nconf");
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var passport = require("passport");
-var session = require("express-session");
-var bodyParser = require('body-parser');
-var ejs = require('ejs');
-var app = express();
+var express = require("express"),
+Yo = require("yo-api"),
+nconf = require("nconf"),
+GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
+passport = require("passport"),
+session = require("express-session"),
+bodyParser = require('body-parser'),
+ejs = require('ejs'),
+app = express(),
+Gmail = require("node-gmail-api");
 
-var Gmail = require("node-gmail-api");
 var emails = [];
 
 nconf.argv()
   .env()
-  .file({ file: "config.json"});
+  .file({ file: "config.json" });
 
 var yo = new Yo(nconf.get("yo"));
 var lastYoName = "";
@@ -27,9 +27,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 function User(username, email) {
-    this.username = username;
-    this.email = email;
-    this.hasNotified = false;
+  this.username = username;
+  this.email = email;
+  this.hasNotified = false;
 }
 
 passport.use(new GoogleStrategy({
@@ -70,11 +70,6 @@ app.get('/auth/google/callback',
     res.redirect('/?success');
 });
 
-
-app.listen(8080, function(){
-  console.log("Listening on port " +  8080);
-});
-
 setInterval(function() {
   for (var i = 0; i < emails.length; i++) {
     if (emails[i].hasNotified) {
@@ -89,7 +84,7 @@ setInterval(function() {
       var shouldSendYo = true
       for (var j = 0; j < d.payload.headers.length; j++) {
         var header = d.payload.headers[j];
-        // Email is @gmail.com for now, for testing purposes.
+
         if (header.name == "From" && header.value.indexOf("@apple.com") == -1) {
           shouldSendYo = false
         }
@@ -107,5 +102,6 @@ setInterval(function() {
   }
 }, 3000);
 
-
-
+app.listen(8080, function(){
+  console.log("Listening on port " +  8080);
+});
