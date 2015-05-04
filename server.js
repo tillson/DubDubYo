@@ -7,7 +7,8 @@ session = require("express-session"),
 bodyParser = require('body-parser'),
 ejs = require('ejs'),
 app = express(),
-Gmail = require("node-gmail-api");
+Gmail = require("node-gmail-api"),
+hue = require("node-hue-api");
 
 var emails = [];
 

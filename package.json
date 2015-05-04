@@ -15,6 +15,7 @@
     "express-session": "^1.11.1",
     "nconf": "^0.7.1",
     "node-gmail-api": "^0.3.1",
+    "node-hue-api": "^1.0.5",
     "passport": "^0.2.1",
     "passport-google-oauth": "^0.2.0",
     "session": "^0.1.0",
